@@ -14,7 +14,7 @@ function Main(props) {
     setPeople(data);
   }
 
-  const createPeople = async person => {
+  const createPeople = async (person) => {
     // make post request to create people
     await fetch(URL, {
       method: "POST",
@@ -27,9 +27,9 @@ function Main(props) {
     getPeople();
   }
 
-  const updatePeople = async (person, id) => {
+  const updatePeople = async (person) => {
     // make put request to create people
-    await fetch(URL + id, {
+    await fetch(URL + person._id, {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",
@@ -40,7 +40,7 @@ function Main(props) {
     getPeople();
   }
 
-  const deletePeople = async id => {
+  const deletePeople = async (id) => {
     // make delete request to create people
     await fetch(URL + id, {
       method: "DELETE",
@@ -59,7 +59,7 @@ function Main(props) {
         </Route>
         <Route
           path="/people/:id"
-          render={rp => (
+          render={(rp) => (
             <Show
               people={people}
               updatePeople={updatePeople}
