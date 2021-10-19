@@ -6,7 +6,7 @@ import Show from "../pages/Show"
 function Main(props) {
   const [ people, setPeople ] = useState(null);
 
-  const URL = "http://localhost:4000/people/";
+  const URL = "https://express-react123.herokuapp.com/people";
 
   const getPeople = async () => {
     const response = await fetch(URL);
