@@ -4,9 +4,9 @@ import Index from "../pages/Index";
 import Show from "../pages/Show";
 
 function Main(props) {
-  const [ people, setPeople ] = useState(null);
+  const [people, setPeople] = useState(null);
 
-  const URL = "https://express-react123.herokuapp.com/people";
+  const URL = "http://localhost:4000/people/";
 
   const getPeople = async () => {
     const response = await fetch(URL);
@@ -17,9 +17,9 @@ function Main(props) {
   const createPeople = async (person) => {
     // make post request to create people
     await fetch(URL, {
-      method: "POST",
+      method: "post",
       headers: {
-        "Content-Type": "Application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(person),
     });
@@ -27,27 +27,27 @@ function Main(props) {
     getPeople();
   };
 
-  const updatePeople = async (person, id) => {
-    // make put request to create people
-    await fetch(URL + id, {
-      method: "PUT",
+  const updatePeople = async (person) => {
+    // make post request to create people
+    await fetch(URL + person._id, {
+      method: "put",
       headers: {
-        "Content-Type": "Application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(person),
     });
     // update list of people
     getPeople();
-  }
+  };
 
-  const deletePeople = async id => {
-    // make delete request to create people
+  const deletePeople = async (id) => {
+    // make post request to create people
     await fetch(URL + id, {
-      method: "DELETE",
-    })
+      method: "delete",
+    });
     // update list of people
     getPeople();
-  }
+  };
 
   useEffect(() => getPeople(), []);
 
