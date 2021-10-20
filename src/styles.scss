@@ -5,32 +5,31 @@ $maincolor: black;
 $contrastcolor: white;
 
 @mixin white-text-black-bg {
-    color: $contrastcolor;
-    background-color: $maincolor;
+  color: $contrastcolor;
+  background-color: $maincolor;
 }
 
 @mixin black-test-white-bg {
-    color: $maincolor;
-    background-color: $contrastcolor;
+  color: $maincolor;
+  background-color: $contrastcolor;
 }
 
 // --------------------------
-// HEADER
+// Header
 // --------------------------
 
 nav {
-    @include white-text-black-bg;
-    display: flex;
-    justify-content: flex-start;
+  @include white-text-black-bg;
+  display: flex;
+  justify-content: flex-start;
 
-    a {
-        @include white-text-black-bg;
-        
-        div {
-            margin: 10px;
-            font-size:large;
-        }
+  a {
+    @include white-text-black-bg;
+    div {
+      margin: 10px;
+      font-size: large;
     }
+  }
 }
 
 // --------------------------
@@ -39,18 +38,18 @@ nav {
 
 section,
 div {
-    form{
-        input{
-            @include white-text-black-bg;
-            padding: 10px;
-            font-size:1.1em;
-            margin: 10px;
+  form {
+    input {
+      @include white-text-black-bg;
+      padding: 10px;
+      font-size: 1.1em;
+      margin: 10px;
 
-            &[type="submit"]:hover {
-                @include black-test-white-bg
-            }
-        }
+      &[type="submit"]:hover {
+        @include black-test-white-bg;
+      }
     }
+  }
 }
 
 // --------------------------
@@ -58,11 +57,11 @@ div {
 // --------------------------
 
 button#delete {
-    @include white-text-black-bg;
-    display: block;
-    margin: auto;
-    font-size: 1.3em;
-    padding: 10px;
+  @include white-text-black-bg;
+  display: block;
+  margin: auto;
+  font-size: 1.3em;
+  padding: 10px;
 }
 
 // --------------------------
@@ -70,8 +69,8 @@ button#delete {
 // --------------------------
 
 img {
-    width: 300px;
-    height: 300px;
-    border-radius: 90px;
-    object-fit: cover;
+  width: 300px;
+  height: 300px;
+  border-radius: 90px;
+  object-fit: cover;
 }
